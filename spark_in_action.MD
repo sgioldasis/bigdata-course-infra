@@ -36,7 +36,7 @@ hdfs dfs -put sparkinaction/* /data/sparkinaction
 
 ```
 # Creates a session on a local master
-absolute_file_path = "hdfs://namenode:8020/data/sparkinaction/books.csv"
+absolute_file_path = "hdfs://namenode:9000/data/sparkinaction/books.csv"
 
 session = SparkSession.builder.appName("CSV to Dataset").master("spark://69280b13519d:7077").getOrCreate()
 
@@ -60,7 +60,7 @@ We slaan hier de database stap over. Feel free om zelf een PostgreSQL database t
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 
-absolute_file_path = "hdfs://namenode:8020/data/sparkinaction/authors.csv"
+absolute_file_path = "hdfs://namenode:9000/data/sparkinaction/authors.csv"
 
 #  Step 1: Ingestion
 #  ---------
@@ -92,7 +92,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import lit,col,concat
 import json
 
-absolute_file_path = "hdfs://namenode:8020/data/sparkinaction/Restaurants_in_Wake_County_NC.csv"
+absolute_file_path = "hdfs://namenode:9000/data/sparkinaction/Restaurants_in_Wake_County_NC.csv"
 
 spark = SparkSession.builder.appName("Restaurants in Wake County, NC") \
     .master("spark://69280b13519d:7077").getOrCreate()
@@ -156,8 +156,8 @@ spark.stop()
 from pyspark.sql.functions import (lit,col,concat,split)
 from pyspark.sql import SparkSession
 
-absolute_file_path1 = "hdfs://namenode:8020/data/sparkinaction/Restaurants_in_Wake_County_NC.csv"
-absolute_file_path2 = "hdfs://namenode:8020/data/sparkinaction/Restaurants_in_Durham_County_NC.json"
+absolute_file_path1 = "hdfs://namenode:9000/data/sparkinaction/Restaurants_in_Wake_County_NC.csv"
+absolute_file_path2 = "hdfs://namenode:9000/data/sparkinaction/Restaurants_in_Durham_County_NC.json"
 
 spark = SparkSession.builder.appName("Union of two dataframes") \
     .master("local[*]").getOrCreate()
@@ -268,7 +268,7 @@ import time
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import (lit,col,concat,expr)
 
-absolute_file_path = "hdfs://namenode:8020/data/sparkinaction/NCHS_-_Teen_Birth_Rates_for_Age_Group_15-19_in_the_United_States_by_County.csv"
+absolute_file_path = "hdfs://namenode:9000/data/sparkinaction/NCHS_-_Teen_Birth_Rates_for_Age_Group_15-19_in_the_United_States_by_County.csv"
 
 mode=""
 t0 = int(round(time.time() * 1000))
@@ -331,7 +331,7 @@ spark.stop()
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import (lit,col,concat,expr)
 
-absolute_file_path = "hdfs://namenode:8020/data/sparkinaction/NCHS_-_Teen_Birth_Rates_for_Age_Group_15-19_in_the_United_States_by_County.csv"
+absolute_file_path = "hdfs://namenode:9000/data/sparkinaction/NCHS_-_Teen_Birth_Rates_for_Age_Group_15-19_in_the_United_States_by_County.csv"
 
 # Step 1 - Creates a session on a local master
 spark = SparkSession.builder.appName("Analysing Catalyst's behavior") \

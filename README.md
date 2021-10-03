@@ -67,7 +67,7 @@ Go to the command line of the Spark master and start PySpark.
 
 Load breweries.csv from HDFS.
 ```
-  brewfile = spark.read.csv("hdfs://namenode:8020/data/openbeer/breweries/breweries.csv")
+  brewfile = spark.read.csv("hdfs://namenode:9000/data/openbeer/breweries/breweries.csv")
   
   brewfile.show()
 +----+--------------------+-------------+-----+---+
@@ -113,7 +113,7 @@ Go to the command line of the Spark master and start spark-shell.
 
 Load breweries.csv from HDFS.
 ```
-  val df = spark.read.csv("hdfs://namenode:8020/data/openbeer/breweries/breweries.csv")
+  val df = spark.read.csv("hdfs://namenode:9000/data/openbeer/breweries/breweries.csv")
   
   df.show()
 +----+--------------------+-------------+-----+---+
@@ -236,12 +236,12 @@ There you go: your private Hive server to play with.
 
 The configuration parameters can be specified in the hadoop.env file or as environmental variables for specific services (e.g. namenode, datanode etc.):
 ```
-  CORE_CONF_fs_defaultFS=hdfs://namenode:8020
+  CORE_CONF_fs_defaultFS=hdfs://namenode:9000
 ```
 
-CORE_CONF corresponds to core-site.xml. fs_defaultFS=hdfs://namenode:8020 will be transformed into:
+CORE_CONF corresponds to core-site.xml. fs_defaultFS=hdfs://namenode:9000 will be transformed into:
 ```
-  <property><name>fs.defaultFS</name><value>hdfs://namenode:8020</value></property>
+  <property><name>fs.defaultFS</name><value>hdfs://namenode:9000</value></property>
 ```
 To define dash inside a configuration parameter, use triple underscore, such as YARN_CONF_yarn_log___aggregation___enable=true (yarn-site.xml):
 ```
